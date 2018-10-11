@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Zilla+Slab:400,500,600,700|Roboto:400,500,700|Space+Mono:400,700");
+@import url("https://fonts.googleapis.com/css?family=Zilla+Slab:400,500,600,700|Roboto:400,500,700|Ubuntu+Mono:400,700");
 
 html {
   font-size: 1rem;
   background: #fff;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: -0.00333rem;
 }
 
 body {
@@ -15,7 +16,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr 10fr 1fr;
+  grid-template-rows: 100px 10fr 1fr;
   width: 100vw;
 }
 
@@ -23,10 +24,10 @@ body {
   grid-column: 1 / -1;
   display: flex;
   justify-content: space-around;
-  align-items: end;
-  color: white;
+  align-items: center;
   padding: 0;
   margin: 0;
+  background-color: #f5f9fa;
 }
 
 .mainheader h1 {
@@ -37,14 +38,16 @@ body {
   color: #333;
 }
 
-.mainheader h2 {}
+.mainheader h2 {
+}
 
 .sidebar {
   background: cyan;
   grid-column: 1 / 3;
 }
 
-#main-doc header {}
+#main-doc header {
+}
 
 #main-doc {
   grid-column: 3 / 12;
@@ -63,12 +66,59 @@ footer {
 .hidden {
   display: none;
 }
-
+/* css para articulos */
 .articlecontent {
   margin-left: 20px;
   font-family: Verdana, arial, sans-serif;
   margin-right: 20px;
   line-height: 180%;
+}
+
+.articlecontent h1 {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  letter-spacing: -0.00333rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+.articlecontent > h2::before {
+  border-top: 3px solid #3d7e9a;
+  content: "";
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  left: 0;
+}
+.articlecontent h2 {
+  font-family: "Zilla Slab", serif;
+  font-size: 2.66667rem;
+  color: #333;
+}
+
+.articlecontent h3 {
+  padding: 0 4px 0 40px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #333;
+  font-size: 1.6rem;
+  display: inline-block;
+  box-decoration-break: clone;
+  font-family: "Zilla Slab", serif;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.contentText {
+  width: 50%;
+}
+.summary {
+  font-size: 1.26667rem;
+  background-color: #cadee4;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+  line-height: 150%;
 }
 
 .codewraper h1 {
@@ -77,18 +127,81 @@ footer {
   margin-left: 20px;
   color: #90e96e;
   font-size: 1.7rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+.codeText {
+  background-color: rgba(220, 220, 220, 0.5);
+  font-family: "Ubuntu Mono", monospace;
+  padding: 0 2px;
+  border-radius: 2px;
+  font-size: 1.1rem;
+}
+.blue {
+  color: #3d7e9a;
+}
+
+.yellow {
+  color: #ffc83f;
+}
+
+.green {
+  color: #690;
+}
+#htmlcode span.punctuation {
+  color: #b9e0ec;
+}
+#htmlcode span.green {
+  color: #16c97a;
+}
+#htmlcode span.blue {
+  color: #288ad6;
+}
+#htmlcode span.red {
+  color: #fa5e5a;
+}
+
+.red {
+  color: #905;
 }
 
 .codeexample {
-  font-family: 'Space Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
   display: block;
   text-align: left;
-  white-space: pre;
-
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 40px;
   line-height: 2;
   background-color: #2c3643;
   padding: 15px;
   color: white;
   border-left: 8px solid #d447b0;
+}
+.html {
+  color: #b9e0ec;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
+  margin-top: 25px;
+}
+.wrapper > div {
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
+}
+
+.sample-code-frame {
+  border: 1px solid #d447b0;
+  background-color: #2c3643;
+  max-width: calc(100% - 40px - 6px);
+  padding: 20px;
+  border-width: 0px 0px 0px 8px;
 }
