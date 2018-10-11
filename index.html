@@ -13,7 +13,6 @@
 
   <div class="container">
     <header class="mainheader" id="main-header">
-
       <div>
         <h1>logo Css Grid</h1>
       </div>
@@ -23,6 +22,7 @@
       <div>
         <h1>Documentation</h1>
       </div>
+
 
 
     </header>
@@ -78,17 +78,21 @@
       <section class="main-section" id="Introduction">
         <header>
           <article style="margin-left: 30px;">
+            <div class="articlecontent">
             <h1>Introduction</h1>
-            <p>A <em>CSS grid</em> is defined using the <code>grid</code> value of the <code>display</code> property; you can define columns and rows on your grid using the <a href=""><code>grid-template-rows</code></a> and <a href=""><code>grid-template-columns</code></a>
+            <p>A <em>CSS grid</em> is defined using the <span>grid</span> value of the <span>display</span> property; you can define columns and rows on your grid using the <a href=""><span>grid-template-rows</span></a> and <a href=""><span>grid-template-columns</span></a>
               properties.</p>
             <p>The grid that you define using these properties is described as the <em>explicit grid</em>.</p>
             <p>If you place content outside of this explicit grid, or if you are relying on auto-placement and the grid algorithm needs to create additional row or column <a href="">tracks</a> to hold <a href="">grid items</a>, then extra tracks
               will be created in the implicit grid. The <em>implicit grid</em> is the grid created automatically due to content being added outside of the tracks defined.</p>
-<code class="codeexample"><span class="yellow">.wrapper<span> {
-  <span>display:</span> grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px;
-}</code>
+              </div>
+
+              <code class="codeexample"><span style="color:yellow">.wrapper</span> {
+                <span style="color:yellow">display:</span> grid;
+                <span style="color:yellow">grid-template-columns:</span> 1fr 1fr 1fr;
+                <span style="color:yellow">grid-template-rows:</span> 100px 100px;
+                    }</code>
+            
 
           </article>
         </header>
