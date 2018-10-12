@@ -30,11 +30,11 @@
           <a href="#Introduction" class="nav-link">
             <li>Introduction</li>
           </a>
-          <a href="" class="nav-link">
-            <li></li>
+          <a href="#Whatis" class="nav-link">
+            <li>What is a grid?</li>
           </a>
-          <a href="" class="nav-link">
-            <li></li>
+          <a href="#Gridcontainer" class="nav-link">
+            <li>The Grid container</li>
           </a>
           <a href="" class="nav-link">
             <li></li>
@@ -74,74 +74,91 @@
     </nav>
     <main id="main-doc">
       <section class="main-section" id="Introduction">
-        <header>
-          <article style="margin-left: 30px;">
+        <header>Introduction</header>
+          <article>
             <div class="articlecontent">
-              <h1>Introduction</h1>
+
                 <div class="contentText">
                   <p class="summary"><span class="blue">CSS Grid Layout</span> introduces a two-dimensional grid system to CSS. Grids can be used to layout major page areas or small user interface elements. This article introduces the CSS Grid Layout and the new terminology that is part of the CSS Grid Layout Level 1 specification. The features shown in this overview will be then explained in greater detail in the rest of this guide.&nbsp;</p>
-                <p>A <b>CSS grid</b> is defined using the <span class="codeText">grid</span> value of the <span class="codeText">display</span> property; you can define columns and rows on your grid using the <span class="codeText blue">grid-template-rows</span> and <spanclass="codeText blue">grid-template-columns</span> properties.</p>
-                <p>El grid que configures usando estas propiedades es definido como la rejilla  explícita <em>(explicit grid)</em>.</p>
-              <p>Si colocas contenido fuera de esta cuadrícula explícita, o si confías en la ubicación automática y el algoritmo de cuadrícula necesita crear tracks de filas o columnas adicionales para contener grid items, luego se crearán pistas adicionales en la cuadrícula implícita. La cuadrícula implícita es la cuadrícula creada automáticamente debido al contenido que se agrega fuera de las pistas definidas. </p>
 
-              <p>En el siguiente ejemplo, he creado una rejilla  explícita de tres columnas y dos filas. La tercera fila en la cuadrícula es una pista de la fila de la rejilla  implícita, formada debido a que son más de seis los elementos que llenan las pistas explícitas</p>
-              </div>
-            <h2>Ejemplos</h2>
-            <h3>CSS</h3>
+            </div>
+          </article>
 
-                <code class="codeexample w3code"><span class="yellow">.wrapper</span> {
-  display: <span class="yellow">grid</span>;
-  grid-template-columns: <span class="yellow">1fr 1fr 1fr</span>;
-  grid-template-rows: <span class="yellow">100px 100px</span>;
-}
-</code>
-
-            <h3>HTML</h3>
-
-<code id="htmlcode" class="codeexample">  <<span class="red">div</span> <span class="green">class</span>="<span class="blue">wrapper</span>">
-    <<span class="red">div</span>>One&lt;/</span><span class="red">div</span>>
-    <<span class="red">div</span>>Two&lt;/<span class="red">div</span>>
-    <<span class="red">div</span>>Three&lt;/<span class="red">div</span>>
-    <<span class="red">div</span>>Four&lt;/</span><span class="red">div</span>>
-    <<span class="red">div</span>>Five&lt;/</span><span class="red">div</span>>
-    <<span class="red">div</span>>Six&lt;/</span><span class="red">div</span>>
-    <<span class="red">div</span>>Seven&lt;/</span><span class="red">div</span>>
-    <<span class="red">div</span>>Eight&lt;/</span><span class="red">div</span>>
-  &lt;/<span class="red">div</span>></code>
-<div  class="sample-code-frame" style="width: 500px; height: 350px;">
-  <div class="wrapper">
-     <div>One</div>
-     <div>Two</div>
-     <div>Three</div>
-     <div>Four</div>
-     <div>Five</div>
-     <div>Six</div>
-     <div>Seven</div>
-     <div>Eight</div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
+      </section>
+      <section class="main-section" id="Whatis">
+        <header>What is a grid?</header>
+        <article>
+          <div class="articlecontent">
+            <div class="contentText">
+              <p>A grid is an intersecting set of horizontal and vertical lines – one set defining columns and the other rows. Elements can be placed onto the grid, respecting these column and row lines. CSS grid layout has the following features:</p>
+              <h3>Fixed and flexible track sizes</h3>
+              <p>You can create a grid with fixed track sizes – using pixels for example. This sets the grid to the specified pixel which fits to the layout you desire. You can also create a grid using flexible sizes with percentages or with the new fr unit designed for this purpose.</p>
+              <h3>Item placement</h3>
+              <p>You can place items into a precise location on the grid using line numbers, names or by targeting an area of the grid. Grid also contains an algorithm to control the placement of items not given an explicit position on the grid.</p>
+              <h3>Creation of additional tracks to hold content</h3>
+              <p>You can define an explicit grid with grid layout but the specification also deals with the content added outside of a declared grid, which adds additional rows and columns when needed. Features such as adding “as many columns that will fit into a container” are included.</p>
+              <h3>Alignment control</h3>
+              <p>Grid contains alignment features so that we can control how the items align once placed into a grid area, and how the entire grid is aligned.</p>
+              <h3>Control of overlapping content</h3>
+              <p>More than one item can be placed into a grid cell or area, they can partially overlap each other. This layering may then be controlled with <span class="codeText blue">z-index</span> property.</p>
+              <p>Grid is a powerful specification and when combined with other parts of CSS such as <span class=" blue">flexbox</span>, can help you to create layouts that were previously impossible to build in CSS. It all starts by creating a grid in your <b>grid container</b>.</p>
+            </div>
+          </div>
 
           </article>
-        </header>
       </section>
-      <section class="main-section" id="">
-        <header>
-          <article></article>
-        </header>
+
+      <section class="main-section" id="Gridcontainer">
+        <header>The Grid container</header>
+          <article>
+            <div class="articlecontent">
+              <div class="contentText">
+                <p>We create a grid container by declaring <span class="codeText blue">display: grid</span> or <span class="codeText blue">display: inline-grid</span> on an element. As soon as we do this all direct children of that element will become grid items.</p>
+              </div>
+          <div class="contentFluid">
+            <h2>Example</h2>
+            <h3>HTML</h3>
+            <p>In this example, I have a containing div with a class of wrapper, inside are five child elements.</p>
+
+      <code id="htmlcode" class="codeexample">
+      <<span class="red">div</span> <span class="green">class</span>="<span class="blue">wrapper</span>">
+          <<span class="red">div</span>>One&lt;/</span><span class="red">div</span>>
+          <<span class="red">div</span>>Two&lt;/<span class="red">div</span>>
+          <<span class="red">div</span>>Three&lt;/<span class="red">div</span>>
+          <<span class="red">div</span>>Four&lt;/</span><span class="red">div</span>>
+          <<span class="red">div</span>>Five&lt;/</span><span class="red">div</span>>
+        &lt;/<span class="red">div</span>>
+      </code>
+      <h3 class="margin0">CSS</h3>
+      <p>I make the <span class="codeText blue">.wrapper</span> a grid container.</p>
+
+      <code class="codeexample w3code"><span class="yellow">.wrapper</span> {
+        display: <span class="yellow">grid</span>;
+        }
+      </code>
+
+            <div class="sample-code-frame" style="width: 500px; height: auto;">
+                    <div class="wrapper">
+                      <div>One</div>
+                      <div>Two</div>
+                      <div>Three</div>
+                      <div>Four</div>
+                      <div>Five</div>
+                    </div>
+            </div>
+          </div>
+          <div class="contentText">
+            <p>All the direct children are now grid items. In a web browser, you won’t see any difference to how these items are displayed before turning them into a grid, as grid has created a single column grid for the items. At this point, you may find it useful to work with the <span class="blue">Grid Inspector</span>, available as part of Firefox's Developer Tools. If you view this example in Firefox and inspect the grid, you will see a small icon next to the value <span class="codeText blue">grid</span>. Click this and then the grid on this element will be overlaid in the browser window.</p>
+            <div class="contentText">
+            <div class="imgcenter">
+              <img src="https://mdn.mozillademos.org/files/14631/1-grid-inspector.png" alt="Using the Grid Highlighter in DevTools to view a grid" style="height: 753px; width: 50%;">
+              </div>
+          </div>
+          </div>
+        </div>
+        </article>
       </section>
-      <section class="main-section" id="">
-        <header>
-          <article></article>
-        </header>
-      </section>
+
       <section class="main-section" id="">
         <header>
           <article></article>
