@@ -29,7 +29,7 @@ a:hover {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 100px 10fr 100px;
+  grid-template-rows: minmax(100px, auto) 10fr minmax(100px, auto);
   width: 100vw;
 }
 
@@ -41,9 +41,6 @@ a:hover {
   padding: 0;
   margin: 0;
   background-color: #d7f1f8;
-  /* position: sticky;
-  left: 0px;
-  top: 0px; */
 }
 
 .mainheader h1 {
@@ -52,6 +49,14 @@ a:hover {
   font-size: 3.2rem;
   letter-spacing: -0.00333rem;
   color: #333;
+}
+nav header {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  letter-spacing: -0.00333rem;
+  color: #333;
+  margin-left: 20px;
 }
 
 .mainheader h2 {
@@ -88,8 +93,21 @@ section article {
 }
 
 footer {
-  background: blue;
   grid-column: 1 / -1;
+  color: white;
+  position: relative;
+  padding: 60px 20px;
+  background-color: #3e4b5c;
+}
+footer a {
+  color: #2fc1f9;
+}
+.centerfooter {
+  background-color: #3e4b5c;
+  margin: 0 auto;
+  max-width: 93.26667em;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .hidden {
@@ -127,7 +145,7 @@ section header {
   color: #333;
 }
 
-.articlecontent h3 {
+.articlecontent li {
   padding: 0 4px 0 40px;
   font-weight: 400;
   color: #fff;
@@ -256,8 +274,25 @@ section header {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
 }
+.gap1 {
+  column-gap: 10px;
+  row-gap: 1em;
+}
 .m-t-3 {
   margin-top: 3rem;
+}
+
+.box1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.box2 {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-row-end: 5;
 }
 
 .sample-code-frame {
@@ -277,7 +312,41 @@ section header {
   justify-content: center;
 }
 
-/* img,
-video {
-  height: auto !important;
-} */
+.m-end {
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 815px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(100px, auto) 10fr minmax(100px, auto);
+    width: 100vw;
+  }
+
+  .mainheader {
+    grid-column: 1 / -1;
+    padding: 0;
+    margin: 0;
+    background-color: #d7f1f8;
+    grid-auto-rows: minmax(50px, auto);
+    display: grid;
+  }
+
+  .mainheader h1 {
+    font-family: "Zilla Slab", serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: -0.00333rem;
+    color: #333;
+    margin: 10px;
+  }
+  .sidebar {
+    background-color: #f5f9fa;
+    grid-column: 1 / -1;
+  }
+  #main-doc {
+    grid-column: 1 / -1;
+    padding-left: 1rem;
+  }
+}
